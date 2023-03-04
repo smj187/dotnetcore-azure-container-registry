@@ -29,14 +29,14 @@ jobs:
       - name: "Docker Login"
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ secrets.ACR_REGISTRY_NAME }}
-          username: ${{ secrets.ACR_REGISTRY_USERNAME }}
-          password: ${{ secrets.ACR_REGISTRY_PASSWORD }}
+          login-server: ${{ secrets.ACR_ENDPOINT }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
 
       - name: Build image and push it to ACR
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: ${{ secrets.ACR_REGISTRY_NAME }}.azurecr.io/api:latest
+          tags: ${{ secrets.ACR_ENDPOINT }}/api:latest
           file: Dockerfile
