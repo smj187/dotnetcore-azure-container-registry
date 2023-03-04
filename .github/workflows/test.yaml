@@ -38,4 +38,4 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.ACR_REGISTRY_NAME }}.azurecr.io/api:${{ github.sha }}
-          file: Dockerfile
+          file: ./backend/Dockerfile
