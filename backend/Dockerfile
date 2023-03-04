@@ -2,8 +2,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /source
 COPY . ./
-RUN dotnet restore "./backend/API/API.csproj" --disable-parallel
-RUN dotnet publish "./backend/API/API.csproj" -c Release -o /app --no-restore
+RUN dotnet restore "./API/API.csproj" --disable-parallel
+RUN dotnet publish "./API/API.csproj" -c Release -o /app --no-restore
 
 # serve
 FROM mcr.microsoft.com/dotnet/aspnet:7.0

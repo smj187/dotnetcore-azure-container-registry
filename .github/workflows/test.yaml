@@ -36,7 +36,7 @@ jobs:
       - name: Build image and push it to ACR
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./backend
           push: true
-          tags: ${{ secrets.ACR_ENDPOINT }}/api-v2:latest
-          file: backend/Dockerfile
+          tags: ${{ secrets.ACR_ENDPOINT }}/api:latest
+          file: Dockerfile
