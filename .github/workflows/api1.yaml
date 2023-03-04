@@ -1,0 +1,32 @@
+name: Trigger auto deployment for containerapps
+
+on:
+  push:
+    branches: [main]
+    # paths-ignore:
+    #   - "**/README.md"
+    #   - "**/*.yml"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  # Job run image.
+  build:
+    name: "Docker Build and Push to ACR"
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Log in to Azure CLI
+        - name: Log in to Azure
+          uses: azure/login@v1
+          with:
+      # Azure CLI credentials
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
