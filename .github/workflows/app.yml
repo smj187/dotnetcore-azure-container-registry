@@ -27,5 +27,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "./frontend/apps/app"
-          api_location: ""
           output_location: "./frontend/apps/app/dist"
