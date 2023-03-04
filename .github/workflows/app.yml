@@ -28,5 +28,5 @@ jobs:
           action: "upload"
           app_location: "frontend"
           api_location: ""
-          output_location: "frontend"
-          app_build_command: "yarn serve:app"
+          output_location: "frontend/apps/app/dist"
+          skip_app_build: true
