@@ -26,7 +26,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_MEADOW_0DC529E03 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/frontend/apps/app/dist"
+          app_location: "/frontend/apps/app"
           api_location: ""
           output_location: "/frontend/apps/app/"
           app_build_command: "yarn preview"
+          skip_app_build: true
