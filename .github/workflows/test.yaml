@@ -33,15 +33,12 @@ jobs:
           username: ${{ secrets.AZ_SP_CLIENT_ID }}
           password: ${{ secrets.AZ_SP_CLIENT_SECRET }}
 
-      - name: Build Docker image
-        run: docker-compose build
-
       # - name: Push Docker image to Azure Container Registry
       #   run: |
       #       docker tag api:latest ${{ secrets.ACR_REGISTRY_NAME }}.azurecr.io/api:${{ github.sha }}
       #       docker push ${{ secrets.ACR_REGISTRY_NAME }}.azurecr.io/api:${{ github.sha }}
 
-      - name: Build the frontend image and push it to ACR
+      - name: Push Docker image to Azure Container Registry
         uses: docker/build-push-action@v2
         with:
           push: true
