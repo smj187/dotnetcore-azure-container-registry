@@ -38,4 +38,4 @@ jobs:
         with:
           push: true
           tags: mytest2356.azurecr.io/api:${{ github.sha }}
-          file: aspnet-core-dotnet-core/Dockerfile
+          file: Dockerfile
