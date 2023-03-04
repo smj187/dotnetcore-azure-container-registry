@@ -28,4 +28,5 @@ jobs:
           action: "upload"
           app_location: "/frontend/apps/app"
           api_location: ""
-          output_location: "/frontend/apps/app/dist"
+          output_location: "/dist"
+          app_build_command: "yarn preview"
