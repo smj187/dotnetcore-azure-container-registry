@@ -36,6 +36,7 @@ jobs:
       - name: Build the frontend image and push it to ACR
         uses: docker/build-push-action@v2
         with:
+          context: .
           push: true
           tags: ${{ secrets.ACR_REGISTRY_NAME }}.azurecr.io/api:${{ github.sha }}
           file: ./backend/Dockerfile
