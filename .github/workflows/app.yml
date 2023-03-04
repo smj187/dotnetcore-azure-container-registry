@@ -53,4 +53,4 @@ jobs:
           app_location: "/frontend/apps/app/dist"
           api_location: ""
           output_location: ""
-          skip_app_build: true
+          app_build_command: "yarn build && yarn preview"
