@@ -38,5 +38,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.ACR_ENDPOINT }}/api:latest
-          file: Dockerfile
+          tags: ${{ secrets.ACR_ENDPOINT }}/api-v2:latest
+          file: backend/Dockerfile
